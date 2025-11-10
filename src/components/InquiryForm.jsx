@@ -7,22 +7,8 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Textarea } from "@/components/ui/textarea";
 import { MessageCircle } from "lucide-react";
 
-interface FormData {
-  name: string;
-  phone: string;
-  clothingType: string;
-  fabric: string;
-  style: string;
-  budget: string;
-  deliveryTime: string;
-}
-
-interface InquiryFormProps {
-  onSubmit: (data: FormData) => void;
-}
-
-export const InquiryForm = ({ onSubmit }: InquiryFormProps) => {
-  const [formData, setFormData] = useState<FormData>({
+export const InquiryForm = ({ onSubmit }) => {
+  const [formData, setFormData] = useState({
     name: "",
     phone: "",
     clothingType: "",
@@ -32,7 +18,7 @@ export const InquiryForm = ({ onSubmit }: InquiryFormProps) => {
     deliveryTime: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     onSubmit(formData);
   };

@@ -4,24 +4,7 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { MessageCircle, Calendar, IndianRupee, ArrowLeft } from "lucide-react";
 
-interface EstimateData {
-  name: string;
-  phone: string;
-  clothingType: string;
-  fabric: string;
-  style: string;
-  budget: string;
-  deliveryTime: string;
-  estimatedPrice: string;
-  estimatedDays: string;
-}
-
-interface EstimateResultProps {
-  data: EstimateData;
-  onBack: () => void;
-}
-
-export const EstimateResult = ({ data, onBack }: EstimateResultProps) => {
+export const EstimateResult = ({ data, onBack }) => {
   const generateWhatsAppMessage = () => {
     const message = `Hello Samariaa! 
 

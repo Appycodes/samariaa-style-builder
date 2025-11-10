@@ -3,26 +3,11 @@ import { InquiryForm } from "@/components/InquiryForm";
 import { EstimateResult } from "@/components/EstimateResult";
 import heroImage from "@/assets/boutique-hero.jpg";
 
-interface FormData {
-  name: string;
-  phone: string;
-  clothingType: string;
-  fabric: string;
-  style: string;
-  budget: string;
-  deliveryTime: string;
-}
-
-interface EstimateData extends FormData {
-  estimatedPrice: string;
-  estimatedDays: string;
-}
-
 const Index = () => {
   const [showEstimate, setShowEstimate] = useState(false);
-  const [estimateData, setEstimateData] = useState<EstimateData | null>(null);
+  const [estimateData, setEstimateData] = useState(null);
 
-  const calculateEstimate = (data: FormData): EstimateData => {
+  const calculateEstimate = (data) => {
     // Simple estimation logic based on clothing type and delivery time
     let basePrice = 0;
     let baseDays = 0;
@@ -74,7 +59,7 @@ const Index = () => {
     };
   };
 
-  const handleFormSubmit = (data: FormData) => {
+  const handleFormSubmit = (data) => {
     const estimate = calculateEstimate(data);
     setEstimateData(estimate);
     setShowEstimate(true);
